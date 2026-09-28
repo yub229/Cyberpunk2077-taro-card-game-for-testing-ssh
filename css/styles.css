@@ -1,0 +1,134 @@
+
+
+/* 
+The majority of this code was taken directly from w3 schools and modified to be able to flip on click and not hover (https://www.w3schools.com/howto/howto_css_flip_card.asp)
+
+The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+
+.flip-card {
+    cursor: pointer;
+    background-color: transparent;
+    width: 100%;
+    aspect-ratio: 1/2;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-card-inner.flipped {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  
+  /* Style the front side */
+  .flip-card-front {
+    background-color: #5d5b5b;
+    color: black;
+    font-size: 50px;
+  }
+  
+  .flip-card-back {
+    background-color: dodgerblue;
+    color: white;
+    transform: rotateY(180deg);
+  }
+
+  /* Style the image */
+  .flip-card-back img{
+    background-color: #5d5b5b;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  /*game board setting*/
+  .game-board {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 240px));
+    gap: 15px;
+    justify-content: center;
+    max-width: 2160px;
+    margin: 40px auto;
+  }
+
+.score-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    color: rgb(182, 230, 9);
+
+    width: fit-content;
+    max-width: 90%;
+    margin: 20px auto;
+    padding: 15px 25px;
+
+    border: 2px solid rgb(43, 93, 231);
+    border-radius: 10px;
+}
+
+.reset-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 36px;
+}
+
+.flip-card.matched {
+    pointer-events: none;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+#gameMessage {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+    .score-container {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(2, minmax(80px, 1fr));
+        gap: 10px;
+    }
+}
+
+
+body {
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.75),
+            rgba(0, 0, 0, 0.9)
+        ),
+        url("../images/NightCity.webp");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}

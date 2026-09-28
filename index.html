@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <title>Cyberpunk 2077 Tarot Card Matching Game</title>
+
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+      <h1>Cyberpunk 2077 Tarot Card Matching Game</h1>
+
+      <div class="reset-button-container">
+        <button id="resetButton">Reset</button>
+      </div>
+
+      <p id="gameMessage"></p>
+
+      <div class="score-container">
+        <div>Attempts: <span id="attemptCount">0</span></div>
+        <div>Matches: <span id="matchCount">0</span> / 8</div>
+        <div>Time: <span id="timer">0</span>s</div>
+      </div>
+
+      <section class="game-boards">
+        <div class="game-board">
+
+          <div class="flip-card" data-value="fool">
+            <div id="card1" class="flip-card-inner">
+              <div id="card1front" class="flip-card-front">?</div>
+              <div id="card1back" class="flip-card-back">
+                <img src="images/tarot/fool.webp" alt="The Fool tarot card">
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" data-value="hermit">
+            <div id="card2" class="flip-card-inner">
+              <div id="card2front" class="flip-card-front">?</div>
+              <div id="card2back" class="flip-card-back">
+                <img src="images/tarot/hermit.webp" alt="The Hermit tarot card">
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" data-value="hierophant">
+            <div id="card3" class="flip-card-inner">
+              <div id="card3front" class="flip-card-front">?</div>
+              <div id="card3back" class="flip-card-back">
+                <img src="images/tarot/hierophant.webp" alt="The Hierophant tarot card">
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" data-value="empress">
+            <div id="card4" class="flip-card-inner">
+              <div id="card4front" class="flip-card-front">?</div>
+              <div id="card4back" class="flip-card-back">
+                <img src="images/tarot/empress.webp" alt="The Empress tarot card">
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" data-value="emperor">
+            <div id="card5" class="flip-card-inner">
+              <div id="card5front" class="flip-card-front">?</div>
+              <div id="card5back" class="flip-card-back">
+                <img src="images/tarot/emperor.webp" alt="The Emperor tarot card">
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" data-value="justice">
+            <div id="card6" class="flip-card-inner">
+              <div id="card6front" class="flip-card-front">?</div>
+              <div id="card6back" class="flip-card-back">
+                <img src="images/tarot/justice.webp" alt="The Justice tarot card">
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" data-value="tower">
+            <div id="card7" class="flip-card-inner">
+              <div id="card7front" class="flip-card-front">?</div>
+              <div id="card7back" class="flip-card-back">
+                <img src="images/tarot/tower.webp" alt="The Tower tarot card">
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" data-value="world">
+            <div id="card8" class="flip-card-inner">
+              <div id="card8front" class="flip-card-front">?</div>
+              <div id="card8back" class="flip-card-back">
+                <img src="images/tarot/world.webp" alt="The World tarot card">
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" data-value="fool">
+            <div id="card9" class="flip-card-inner">
+              <div id="card9front" class="flip-card-front">?</div>
+              <div id="card9back" class="flip-card-back">
+                <img src="images/tarot/fool.webp" alt="The Fool tarot card">
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" data-value="hermit">
+            <div id="card10" class="flip-card-inner">
+              <div id="card10front" class="flip-card-front">?</div>
+              <div id="card10back" class="flip-card-back">
+                <img src="images/tarot/hermit.webp" alt="The hermit tarot card">
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" data-value="hierophant">
+            <div id="card11" class="flip-card-inner">
+              <div id="card11front" class="flip-card-front">?</div>
+              <div id="card11back" class="flip-card-back">
+                <img src="images/tarot/hierophant.webp" alt="The Hierophant tarot card">
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" data-value="empress">
+            <div id="card12" class="flip-card-inner">
+              <div id="card12front" class="flip-card-front">?</div>
+              <div id="card12back" class="flip-card-back">
+                <img src="images/tarot/empress.webp" alt="The Empress tarot card">
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" data-value="emperor">
+            <div id="card13" class="flip-card-inner">
+              <div id="card13front" class="flip-card-front">?</div>
+              <div id="card13back" class="flip-card-back">
+                <img src="images/tarot/emperor.webp" alt="The Emperor tarot card">
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" data-value="justice">
+            <div id="card14" class="flip-card-inner">
+              <div id="card14front" class="flip-card-front">?</div>
+              <div id="card14back" class="flip-card-back">
+                <img src="images/tarot/justice.webp" alt="The Justice tarot card">
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" data-value="tower">
+            <div id="card15" class="flip-card-inner">
+              <div id="card15front" class="flip-card-front">?</div>
+              <div id="card15back" class="flip-card-back">
+                <img src="images/tarot/tower.webp" alt="The Tower tarot card">
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" data-value="world">
+            <div id="card16" class="flip-card-inner">
+              <div id="card16front" class="flip-card-front">?</div>
+              <div id="card16back" class="flip-card-back">
+                <img src="images/tarot/world.webp" alt="The World tarot card">
+              </div>
+            </div>
+          </div>
+        
+
+        </div>
+      </section>
+      <script type="text/javascript" src="scripts/script.js"></script>
+    </body>
+</html>
